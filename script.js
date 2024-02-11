@@ -1,22 +1,19 @@
-form.addEventListener('submit', function(event) {
-    event.preventDefault();
+$(document).ready(function () {
+    $('form').on('submit', function (e) {
+        e.preventDefault();
 
-    let inputA = document.getElementById("first-input");
-    let inputB = document.getElementById("second-input");
+        const taskName = $('#input-task').val();
+        if(taskName.trim() !== ''){
+            $('#task-list').append('<li><img src="./img/checked.png" class="finish-task"/><span class="task-name">' + taskName + '</span><img src="./img/delete.png" class="delete-task"/></li>');
+            $('#input-task').val('');
+        }
+    });
 
-    const mensagem = "Mensagem enviada com sucesso!";
-    const parseA = parseFloat(inputA.value);
-    const parseB = parseFloat(inputB.value);
+    $(document).on('click', '.finish-task', function(){
+        $(this).closest('li').find('.task-name').toggleClass('completed');
+    });
 
-    if (parseB > parseA) {
-        const successMessage = document.querySelector('.success-message');
-        successMessage.innerHTML = mensagem;
-        successMessage.style.display = "block";
-        document.querySelector('.message-error').style.display = 'none';
-    } else {
-        const errorMessage = document.querySelector('.message-error');
-        errorMessage.innerHTML = 'Mensagem não enviada';
-        errorMessage.style.display = 'block';
-        document.querySelector('.success-message').style.display = 'none';
-    }
+    $(document).on('click', '.delete-task', function(){
+        $(this).closest('li').remove();
+    });
 });
