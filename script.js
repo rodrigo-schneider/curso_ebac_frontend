@@ -1,22 +1,13 @@
-form.addEventListener('submit', function(event) {
-    event.preventDefault();
+$(document).ready(function() {
+    
+    $('#telefone').mask('(00) 0000-0000', {
+        placeholder:'(00) 0000-0000'
+    })
+    $('#cpf').mask('000.000.000-00', {
+        placeholder:'000.000.000-00'
+    })
+    $('#cep').mask('00000-000', {
+        placeholder:'00000-000'
+    })
 
-    let inputA = document.getElementById("first-input");
-    let inputB = document.getElementById("second-input");
-
-    const mensagem = "Mensagem enviada com sucesso!";
-    const parseA = parseFloat(inputA.value);
-    const parseB = parseFloat(inputB.value);
-
-    if (parseB > parseA) {
-        const successMessage = document.querySelector('.success-message');
-        successMessage.innerHTML = mensagem;
-        successMessage.style.display = "block";
-        document.querySelector('.message-error').style.display = 'none';
-    } else {
-        const errorMessage = document.querySelector('.message-error');
-        errorMessage.innerHTML = 'Mensagem não enviada';
-        errorMessage.style.display = 'block';
-        document.querySelector('.success-message').style.display = 'none';
-    }
-});
+})
