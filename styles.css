@@ -1,0 +1,14 @@
+html, body {
+    background-color: rgb(233, 245, 245);
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.col-md-6 {
+    margin: 20px auto 0;
+}
+
+
+
