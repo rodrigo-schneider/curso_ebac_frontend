@@ -1,0 +1,29 @@
+body {
+  background-color: #1dd1a1;
+  color: #222f3e;
+  text-align: center;
+}
+header {
+  margin-top: 40px;
+}
+.container {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+}
+@media (max-width: 767px) {
+  .container {
+    max-width: 70%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    max-width: 80%;
+  }
+}
+img {
+  border-radius: 10px;
+}
+li {
+  list-style: none;
+}

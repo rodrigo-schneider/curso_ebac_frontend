@@ -1,0 +1,38 @@
+@import "variaveis.less";
+@import "mapas.less";
+
+@breakpointMobile: ~"(max-width: 767px)";
+@breakpointTablet: ~"(min-width: 768px) and (max-width: 1023px)";
+
+body {
+    background-color: #colors[backgroundColor];
+    color: @corTextos;
+    text-align: center;
+}
+
+header {
+    margin-top: 40px;
+}
+
+.container {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+
+    @media @breakpointMobile {
+        max-width: 70%;
+    }
+
+    @media @breakpointTablet {
+        max-width: 80%;
+    }
+}
+
+img {
+    border-radius: 10px;
+}
+
+li {
+    list-style: none;
+}
+
